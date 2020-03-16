@@ -19,8 +19,8 @@ public class Paper implements IManuscript {
         return _student;
     }
 
-    public void Print() {
-        System.out.println("This paper was made by " +_student + " from " + _class);
-        System.out.println(_text);
+    public void Print(IFormatter formatter) {
+        System.out.println(formatter.FormatText("This paper was made by " +_student + " from " + _class));
+        System.out.println(formatter.FormatText(_text));
     }
 }

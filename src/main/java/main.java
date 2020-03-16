@@ -13,7 +13,9 @@ public class main {
         documents.add(paper);
 
         for (IManuscript docs: documents) {
-            docs.Print();
+
+            docs.Print(new NormalFormatter());
+            docs.Print(new BackwardsTextFormatter());
             System.out.println();
         }
 

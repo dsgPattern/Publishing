@@ -19,9 +19,9 @@ public class Book implements IManuscript {
         return _author;
     }
 
-    public void Print() {
-        System.out.println("=====" + _title + "=====");
-        System.out.println("            by " + _author);
-        System.out.println(_text);
+    public void Print(IFormatter formatter) {
+        System.out.println(formatter.FormatText("=====" + _title + "====="));
+        System.out.println(formatter.FormatText("            by " + _author));
+        System.out.println(formatter.FormatText(_text));
     }
 }

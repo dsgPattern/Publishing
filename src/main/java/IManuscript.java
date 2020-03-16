@@ -1,3 +1,3 @@
 public interface IManuscript {
-    void Print( );
+    void Print(IFormatter formatter );
 }

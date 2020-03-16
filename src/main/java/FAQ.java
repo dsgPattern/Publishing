@@ -17,10 +17,10 @@ public class FAQ implements IManuscript {
         return _questions;
     }
 
-    public void Print() {
-        System.out.println(_title + ":");
+    public void Print(IFormatter formatter) {
+        System.out.println(formatter.FormatText(_title + ":"));
         for (String question : _questions) {
-            System.out.println(question);
+            System.out.println(formatter.FormatText(question));
         }
     }
 }
