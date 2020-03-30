@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class FAQ implements IManuscript {
     private String _title;
     private ArrayList<String> _questions;
+    private IFormatter _formatter;
 
-    public FAQ(String title, ArrayList<String> questions) {
+    public FAQ(String title, ArrayList<String> questions, IFormatter formatter) {
         _title = title;
         _questions = questions;
+        _formatter = formatter;
     }
 
     public String getTitle() {
@@ -17,10 +19,10 @@ public class FAQ implements IManuscript {
         return _questions;
     }
 
-    public void Print(IFormatter formatter) {
-        System.out.println(formatter.FormatText(_title + ":"));
+    public void Print() {
+        System.out.println(_formatter.FormatText(_title + ":"));
         for (String question : _questions) {
-            System.out.println(formatter.FormatText(question));
+            System.out.println(_formatter.FormatText(question));
         }
     }
 }

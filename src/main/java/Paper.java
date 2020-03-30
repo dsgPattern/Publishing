@@ -1,10 +1,12 @@
 public class Paper implements IManuscript {
     private String _class, _text, _student;
+    private IFormatter _formatter;
 
-    public Paper(String clas, String text, String student) {
+    public Paper(String clas, String text, String student, IFormatter formatter) {
         _class = clas;
         _text = text;
         _student = student;
+        _formatter = formatter;
     }
 
     public String getClas() {
@@ -19,8 +21,8 @@ public class Paper implements IManuscript {
         return _student;
     }
 
-    public void Print(IFormatter formatter) {
-        System.out.println(formatter.FormatText("This paper was made by " +_student + " from " + _class));
-        System.out.println(formatter.FormatText(_text));
+    public void Print() {
+        System.out.println(_formatter.FormatText("This paper was made by " +_student + " from " + _class));
+        System.out.println(_formatter.FormatText(_text));
     }
 }

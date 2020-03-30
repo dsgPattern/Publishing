@@ -4,9 +4,11 @@ import java.util.Arrays;
 public class main {
     public static void main(String[] args) {
         ArrayList<IManuscript> documents = new ArrayList<IManuscript>();
-        FAQ faq = new FAQ("Nonsense questions", new ArrayList<String>(Arrays.asList("first question", "second question")));
-        Book book = new Book("Another book", "whatever text fits as content because this is a small book", "me");
-        Paper paper = new Paper("second year", "this is my master degree paper", "Smartest Ever");
+        FAQ faq = new FAQ("Nonsense questions", new ArrayList<String>(Arrays.asList("first question", "second question")), new DoubleCharacterFormatter());
+        Book book = new Book("Another book", "whatever text fits as content because this is a small book", "me",
+                new BackwardsTextFormatter());
+
+        Paper paper = new Paper("second year", "this is my master degree paper", "Smartest Ever", new NormalFormatter());
 
         documents.add(faq);
         documents.add(book);
@@ -14,8 +16,7 @@ public class main {
 
         for (IManuscript docs: documents) {
 
-            docs.Print(new NormalFormatter());
-            docs.Print(new BackwardsTextFormatter());
+            docs.Print();
             System.out.println();
         }
 
